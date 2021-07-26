@@ -11,7 +11,7 @@ constructor(address[] memory _owners, uint _numConfirmationsRequired) {
     }    
 }
 ```
-Later on I hope that I can retrieve the owners' keys', but I found this [gem](https://stackoverflow.com/questions/65529667/get-keys-of-solidity-mapping) and which states that due to resource efficiency, the Solidity/EVM doesn't store iterable keys. There is a workaround, which is to emit events that can be listened from the clients side(geth, parity, etc), but as I've mentioned before it cannot be done on the contract itself so I'm not taking that path.
+Later on I hope that I can retrieve the owners' keys', but I found this [gem](https://stackoverflow.com/questions/65529667/get-keys-of-solidity-mapping) which states that due to resource efficiency, the Solidity/EVM doesn't store iterable keys. There is a workaround, which is to emit events that can be listened from the clients side(geth, parity, etc), but as I've mentioned before it cannot be done on the contract itself so I'm not taking that path.
 
 
 
