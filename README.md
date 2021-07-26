@@ -16,4 +16,6 @@ Later on I hope that I can retrieve the owners' keys', but I found this [gem](ht
 
 
 
-2. List must be stored on `memory` or on the blockchain a.k.a `storage`
+2. `list` must be stored on `memory` or on the blockchain a.k.a `storage`.
+
+3. `mapping` doesn't have length. Unlike python where we can directly iterate on `dict`, solidity behaves differently.
