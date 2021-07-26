@@ -2,11 +2,11 @@
 pragma solidity ^0.7.6;
 
 contract MultiSigWallet{
-
-    // remember that we cannot directly
-    mapping(address => uint) public owners;
+    address[] public owners;
     // _numConfirmationsRequired is the number of owners except the one who submit the transaction
     uint public numConfirmationsRequired;
+    // mapping if an adress is a valid owner(not a duplicate)
+    mapping(address => bool) isOwner;
 
     // Init constructor
     constructor(address[] memory _owners, uint _numConfirmationsRequired) {
@@ -14,9 +14,10 @@ contract MultiSigWallet{
         require(_numConfirmationsRequired <= _owners.length);
         for (uint i = 0; i < _owners.length; i++) {
             address _owner = _owners[i];
-            owners[_owner] = i;
+            require(!isOwner[_owner]);
+            isOwner[_owner] = True
         }
-        numConfirmationsRequired = owners.length;
+       
         
     }
     
