@@ -16,3 +16,4 @@ Later on I hope that I can retrieve the owners' keys', but I found this (gem)["h
 
 
 
+2. List must be stored on `memory` or on the blockchain a.k.a `storage`
