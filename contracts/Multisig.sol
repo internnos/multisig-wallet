@@ -9,7 +9,6 @@ contract MultiSigWallet{
     uint public numConfirmationsRequired;
 
     // Init constructor
-    
     constructor(address[] memory _owners, uint _numConfirmationsRequired) {
         require(_numConfirmationsRequired > 0, 'number of validators must be greater than 0');
         require(_numConfirmationsRequired <= _owners.length);
