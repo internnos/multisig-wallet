@@ -10,6 +10,7 @@ contract MultiSigWallet{
 
     // Init constructor
     constructor(address[] memory _owners, uint _numConfirmationsRequired) {
+        require(_owners.length > 0, 'number of owners must be greater than 0');
         require(_numConfirmationsRequired > 0, 'number of confirmations must be greater than 0');
         for (uint i = 0; i < _owners.length; i++) {
             address _owner = _owners[i];
