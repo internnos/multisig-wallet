@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.7.6;
 
+
 contract MultiSigWallet{
     address[] public owners;
-    // _numConfirmationsRequired is the number of owners except the one who submit the transaction
     uint public numConfirmationsRequired;
     // mapping if an adress is a valid owner(not a duplicate)
     mapping(address => bool) isOwner;
@@ -11,14 +11,14 @@ contract MultiSigWallet{
     // Init constructor
     constructor(address[] memory _owners, uint _numConfirmationsRequired) {
         require(_numConfirmationsRequired > 0, 'number of validators must be greater than 0');
-        require(_numConfirmationsRequired <= _owners.length);
+        
         for (uint i = 0; i < _owners.length; i++) {
             address _owner = _owners[i];
             require(!isOwner[_owner]);
-            isOwner[_owner] = True
+            isOwner[_owner] = True;
+            owners.push(_owner); 
         }
-       
-        
+        require(_numConfirmationsRequired <= owners.length);       
     }
     
     // function submitTransaction() {};
