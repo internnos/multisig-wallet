@@ -29,7 +29,6 @@ def test_duplicate_owners():
 def test_deployer_and_owner_address():
     address_smart_contract=accounts[0]
     address_eoa=[accounts[0]]
-    # import pdb; pdb.set_trace()
 
     with pytest.raises(VirtualMachineError) as excinfo:
         MultiSigWallet.deploy(address_eoa, 2, {'from': address_smart_contract})
