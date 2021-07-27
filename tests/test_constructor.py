@@ -1,5 +1,4 @@
 from brownie import accounts, MultiSigWallet
-# from brownie.network.contract.ContractContainer import MultiSigWallet
 from brownie.exceptions import VirtualMachineError
 import pytest
 
