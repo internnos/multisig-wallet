@@ -15,7 +15,7 @@ contract MultiSigWallet{
         for (uint i = 0; i < _owners.length; i++) {
             address _owner = _owners[i];
             require(_owner != address(0), "owner address must be different from deployer address");
-            require(!isOwner[_owner], "duplicate owner adressed detected");
+            require(!isOwner[_owner], "duplicate owner address detected");
             isOwner[_owner] = true;
             owners.push(_owner); 
         }

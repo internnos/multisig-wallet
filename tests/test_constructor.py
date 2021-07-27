@@ -24,7 +24,7 @@ def test_duplicate_owners():
     address_eoa=[accounts[1]]+[accounts[1]]+[accounts[1]]
     with pytest.raises(VirtualMachineError) as excinfo:
         MultiSigWallet.deploy(address_eoa, 2, {'from': address_smart_contract})
-    assert str(excinfo.value)=="revert: duplicate owner adressed detected"
+    assert str(excinfo.value)=="revert: duplicate owner address detected"
 
 def test_deployer_and_owner_address():
     address_smart_contract=accounts[0]
