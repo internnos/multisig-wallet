@@ -19,7 +19,7 @@ contract MultiSigWallet{
             isOwner[_owner] = true;
             owners.push(_owner); 
         }
-        require(_numConfirmationsRequired <= owners.length);       
+        require(_numConfirmationsRequired <= owners.length, 'number of confirmations exceed available owners');       
     }
     
     // function submitTransaction() {};
