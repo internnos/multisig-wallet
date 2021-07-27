@@ -27,11 +27,9 @@ def test_duplicate_owners():
     assert str(excinfo.value)=="revert: duplicate owner address detected"
 
 
-# def test_deployer_and_owner_address():
-#     address_smart_contract=accounts[0]
-#     address_eoa=[accounts[0]]
-
-#     with pytest.raises(VirtualMachineError) as excinfo:
-#         MultiSigWallet.deploy(address_eoa, 2, {'from': address_smart_contract})
-#     # TODO: INSPECT WHY THE ERROR IS REVERT
-#     assert str(excinfo.value)=="revert"
+def test_confirmations_exceed_number_of_owners():
+    address_smart_contract=accounts[0]
+    address_eoa=accounts[1:3]
+    with pytest.raises(VirtualMachineError) as excinfo:
+        MultiSigWallet.deploy(address_eoa, 4, {'from': address_smart_contract})
+    assert str(excinfo.value)=="revert: number of confirmations exceed available owners"
