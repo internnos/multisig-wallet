@@ -1,4 +1,16 @@
-### Takeaways
+# Multisig Wallet 
+Multisig Wallet is a wallet where the number of owner(N) is more than one, and in order for transaction to occur, n number of owners must verify the transaction, where n <= N.
+
+# Dependencies
+python3.6 or greater  
+ganache-cli==6.12.2  
+pipx==0.16.3  
+
+# Run tests
+`$ brownie test`
+
+
+# Takeaways
 
 1. There is no direct or easy way to get the key of a mapping in solidity. My first idea of removing the duplicate of owners is to store the owner addresses in a mapping.
 
