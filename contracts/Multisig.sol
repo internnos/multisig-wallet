@@ -15,7 +15,7 @@ contract MultiSigWallet{
         for (uint i = 0; i < _owners.length; i++) {
             address _owner = _owners[i];
             require(!isOwner[_owner]);
-            isOwner[_owner] = True;
+            isOwner[_owner] = true;
             owners.push(_owner); 
         }
         require(_numConfirmationsRequired <= owners.length);       
