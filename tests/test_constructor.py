@@ -33,3 +33,17 @@ def test_confirmations_exceed_number_of_owners():
     with pytest.raises(VirtualMachineError) as excinfo:
         MultiSigWallet.deploy(address_eoa, 4, {'from': address_smart_contract})
     assert str(excinfo.value)=="revert: number of confirmations exceed available owners"
+
+
+def test_correctness_1():
+    address_smart_contract=accounts[0]
+    address_eoa=accounts[1:3]
+
+    multisig_wallet=MultiSigWallet.deploy(address_eoa, 1, {'from': address_smart_contract})
+    
+def test_correctness_2():
+    address_smart_contract=accounts[0]
+    address_eoa=accounts[1:3]
+
+    multisig_wallet=MultiSigWallet.deploy(address_eoa, 2, {'from': address_smart_contract})
+    
