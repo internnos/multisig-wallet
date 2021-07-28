@@ -2,6 +2,7 @@
 pragma solidity ^0.7.6;
 
 import "OpenZeppelin/openzeppelin-contracts@3.4.0/contracts/utils/Counters.sol";
+import "OpenZeppelin/openzeppelin-contracts@3.4.0/contracts/utils/Context.sol";
 
 
 contract MultiSigWallet{
@@ -23,12 +24,13 @@ contract MultiSigWallet{
         }
         require(_numConfirmationsRequired <= owners.length, 'number of confirmations exceed available owners');       
     }
-
-    function returnMany() public pure returns(uint, bool, uint) {
-        return (1, true, 2);
-    }
     
-    // function submitTransaction() {};
+    function submitTransaction(address recipient, uint amount) public {
+        for (uint i = 0; i < owners.length; i++){
+            address _owner = owners[i];
+            require(recipient != _owner, "cannot send ether to one of the multisig owner");
+        }
+    }
 
     // function confirmTransaction() {};
 
