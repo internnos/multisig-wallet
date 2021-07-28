@@ -4,7 +4,8 @@ Multisig Wallet is a wallet where the number of owner(N) is more than one, and i
 # Dependencies
 python3.6 or greater  
 ganache-cli==6.12.2  
-pipx==0.16.3  
+pipx==0.16.3
+openzeppelin@3.4.0
 
 # Run tests
 `$ brownie test`
