@@ -45,4 +45,3 @@ def test_correctness_2():
     address_eoa=accounts[1:3]
 
     multisig_wallet=MultiSigWallet.deploy(address_eoa, 2, {'from': address_smart_contract})
-    

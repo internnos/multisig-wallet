@@ -23,6 +23,10 @@ contract MultiSigWallet{
         }
         require(_numConfirmationsRequired <= owners.length, 'number of confirmations exceed available owners');       
     }
+
+    function returnMany() public pure returns(uint, bool, uint) {
+        return (1, true, 2);
+    }
     
     // function submitTransaction() {};
 
